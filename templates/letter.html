@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Template</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f1fafa;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            margin-top: 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            background-color: #ffffff;
+        }
+        .header {
+            display: flex;
+            width: auto;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;       
+            padding: 5px 0;
+            
+        }
+        .header img {
+            max-height: 75px;
+        }
+        .heading {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .date {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .content {
+            line-height: 1.6;
+        }
+        .signature {
+            margin-top: 40px;
+            text-align: right;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0; /* Add padding */
+             /* Ensure footer spans the width */
+          }
+      
+          .footer p {
+            margin: 3px;
+          }
+          .contentcontainer {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            height: auto;
+        }
+
+        .square-button1 {
+            width: 100px;
+            height: 30px;
+            background-color: #70add6;
+            background-color: #bcdb34;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+
+            
+        }
+        .square-button2 {
+            width: 100px;
+            height: 30px;
+            background-color: #34dbd3;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+
+            
+        }
+        .square-button3 {
+            width: 100px;
+            height: 30px;
+            background-color: #db4734;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+
+            
+        }
+        .square-button4 {
+            width: 100px;
+            height: 30px;
+            background-color: #3466db;
+            
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div>
+            <h1>Letter Template</h1>
+        </div>
+        <div>
+            <img src="https://3.bp.blogspot.com/-4rKnpoL6OTM/WmqTDsyCI5I/AAAAAAAA30A/8iWSxDQMi4QPvULW2-b9oOlYwHtghAYbACLcBGAs/s1600/Vaagdevi%2BLogo.png" alt="vaagdevi logo" class="userimg">
+        </div>
+    </div>
+    <div class="date">
+        <p>Date: {{letter['date']}}</p>
+    </div>
+    <div class="content">
+        
+        <p>Subject:{{letter['subject']}}</p>
+
+        <p>Dear {{letter['cell']}},</p>
+        
+        <p>
+            {{letter['content']}}
+        </p>
+    </div>
+    <div class="signature">
+        <p>Sincerely,</p>
+        <p>{{letter['username']}}</p>
+    </div>
+    <div class="contentcontainer">                
+
+        <a href="/lettercapture?button=Solved" class ='square-button1'>Solved</a>
+    <a href="/lettercapture?button=Unsolved" class ='square-button2'>Unsolved</a>
+    <a href="/lettercapture?button=Rejected" class ='square-button3'>Rejected</a>
+    <a href="/lettercapture?button=Hold" class ='square-button4'>Hold</a>
+
+    </div>
+ 
+<div class="footer">
+    <p>This is the footer content.</p>
+</div>
+
+</div>
+
+</body>
+</html>

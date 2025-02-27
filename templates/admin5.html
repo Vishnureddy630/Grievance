@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface with Sidebar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:#f2efef;
+            color: #333;
+        }
+
+        header {
+            height: 100px;
+            width: auto;
+            margin-top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color:#e2e2ff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-size: 13px; /* Adjust the font size as per your requirement */
+            margin-bottom: 2px; /* Adjust the margin bottom to reduce the distance between paragraphs */
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #4955cf;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .imag {
+            order: 1; /* Display the image at the end */
+        }
+
+        .textex {
+            order: 0; /* Display the text before the image */
+        }
+
+        .container {
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            background-color: #f6f6f8;
+            box-shadow: 0 0 10px rgba(5, 1, 1, 0.1);
+        }
+
+        .sidebar {
+            width: 150px;
+            background-color:#cdd9e0;
+            color: #fff;
+            padding-top: 40px;
+            overflow-y: auto;
+            border-top-left-radius: auto; /* Curved top-right corner */
+            border-bottom-left-radius: auto; /* Curved bottom-right corner */
+            text-align: center; /* Center content horizontally */
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar nav ul li {
+            
+            margin-bottom: 10px;
+        }
+
+        .sidebar nav a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            transition: 0.3s;
+        }
+
+        .sidebar nav a:hover {
+            background-color: #555;
+        }
+
+        .logo {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .main-container {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .content-box {
+            background-color: #f6f6f8;
+            padding: 20px;
+            border-radius: auto;
+            height: auto;
+        }
+
+        .info-item {
+            margin-bottom: 2px;
+        }
+
+        .para {
+            display: inline-block;
+            width: 100px;
+            margin-bottom: 0;
+        }
+
+        button {
+            text-align: left;
+            display: block;
+            width: 100%;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        
+
+        .contentcontainer {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+            height: auto;
+        }
+
+
+        .square-button1 {
+            height: 100px; /* Adjust height as needed */    
+            width: 100px;
+            background-color: #70add6;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+
+            
+        }
+        .square-button2 {
+            height: 100px; /* Adjust height as needed */    
+            width: 100px;
+            background-color: #34dbd3;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+
+            
+        }
+        .square-button3 {
+            height: 100px; /* Adjust height as needed */    
+            width: 100px;
+            background-color: #bcdb34;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+
+            
+        }
+        .square-button4 {
+            width: 100px;
+            background-color: #db34b7;
+            height: 100px; /* Adjust height as needed */    
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            
+        }
+
+        .notification-badge {
+            text-align: center;
+            background-color: red;
+            color: white;
+            font-size: 18px;
+            margin-left: 70px;
+            width: auto;
+            height: 30px;
+            border-radius: 30px;
+        }
+
+        .button-container {
+            position: relative;
+            margin-top: auto;
+            display: inline-block;
+        }
+        .jai {
+            background-color: transparent;
+        }
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            header {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .sidebar {
+                width: 100%;
+                border-radius: 0;
+            }
+
+            .main-container {
+                padding: 10px;
+            }
+
+            .contentcontainer {
+                flex-direction: column;
+            }
+
+            .square-button1 {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+        <div class='jai'>
+            <img src="https://www.freepngimg.com/download/abstract/30846-4-abstract-transparent-background.png" alt="vaagdevi logo" weight="100" height="100" ><br><br>
+    
+    </div>
+    
+        <nav>
+            <ul>
+                <li><a href="adminsidebar?choice=admin">+Admin</a></li>        
+                <li><a href="adminsidebar?choice=student">+Student</a></li>
+                
+                
+                <li><a href="adminsidebar?choice=logout">logout</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <main class="main-container">
+        <header>
+            
+            <div class="info-item">
+                
+  <p ><b class="para">Name    </b>:{{ user_info['Name'] }}</p>
+  <p ><b class="para">ID.</b>:{{ user_info['Roll_no'] }}</p>
+  <p ><b class="para">Department  </b>:{{ user_info['Branch'] }}</p>
+  
+        </div>
+            
+            <img src="https://th.bing.com/th/id/OIP.ozXGC32VRoOuTV-lthwRyAHaCM?rs=1&pid=ImgDetMain" alt="vaagdevi logo" weight="85" height="85" >
+        </header>
+        <div class="content-box">
+            <h2>letter status</h2>
+
+                
+
+     <div class="contentcontainer">                
+
+<!--         
+            <a href="/capture?button=Solved" class='square-button1'><span class="notification-badge">1</span>Solved</a>
+            <a href="/capture?button=Unsolved" class='square-button2'><span class="notification-badge">2</span>Unsolved</a>
+            <a href="/capture?button=Rejected" class='square-button3'><span class="notification-badge">3</span>Rejected</a> -->
+            <!-- <a href="/capture?button=Hold" class='square-button4'><span class="notification-badge">4</span>Hold</a> -->
+            
+                <!-- Other buttons -->
+                <div class="button-container">
+                    {% if 'Solved' in temp %}
+                    <p class="notification-badge">{{temp['Solved']}}</p>
+                    {% endif %}
+                    <a href="/capture?button=Solved" class='square-button1'>Solved</a>
+                   
+                </div>
+                <div class="button-container">
+                    {% if 'Unsolved' in temp %}
+                    <p class="notification-badge">{{temp['Unsolved']}}</p>
+                    {% endif %}
+                    <a href="/capture?button=Unsolved" class='square-button2'> Unsolved</a>
+                   
+                </div>
+                <div class="button-container">
+                    {% if 'Rejected' in temp %}
+                    <p class="notification-badge">{{temp['Rejected']}}</p>
+                    {% endif %}
+                    <a href="/capture?button=Rejected" class='square-button3'>Rejected</a>
+                   
+                </div>
+                <div class="button-container">
+                    {% if 'Hold' in temp %}
+                    <p class="notification-badge">{{temp['Hold']}}</p>
+                    {% endif %}
+                    <a href="/capture?button=Hold" class='square-button4'> Hold</a>
+                   
+                </div>
+                <!-- Other buttons -->
+            
+            
+        
+        </div>
+        
+        
+            </div>
+        </div>
+    </main>
+  </div>
+</body>
+</html>

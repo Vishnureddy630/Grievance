@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Add your CSS styles here */
+    /* Add some basic styling to the form */
+.continer {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  textarea {
+    height: 100px;
+  }
+  
+  input[type="text"]:focus,
+  textarea:focus {
+    border-color: #66afe9;
+  }
+  
+  .send-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .send-button:hover {
+    background-color: #3e8e41;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0; 
+  }
+  
+  .logo {
+    width: 190px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 20px; /* Adjust spacing between logo and other content */
+  }
+  
+  .header h2 {
+    margin: 0;
+  }
+  .header p {
+
+    font-size: 14px; /* Decrease the font size */
+  }
+  
+  .footer {
+    margin-top: 40px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  .info-item {
+    margin-bottom: 10px;
+  }
+  .para {
+    display: inline-block;
+    width: 100px;
+  }
+  .centered-text {
+    text-align: center;
+    margin-top: auto; /* Push to the top */
+    margin-bottom: auto; /* Push to the bottom */
+  }
+  </style>
+</head>
+<body>
+  <!-- Student Complaint Form -->
+<div class="continer">
+  <div class="header">
+    
+    <div class="centered-text">
+        <img src="https://th.bing.com/th/id/OIP.o94051tQvhLSp1H37GnoNgAAAA?rs=1&pid=ImgDetMain" alt="vaagdevi logo watermark"  class="logo">
+    <h2>Admin cridentials Form</h2>
+    
+    <div>
+    
+    <p>Note:Once you've filled out the form, please double-check all the information to ensure accuracy. Remember, your credentials are crucial for accessing administrative functions, so it's essential to provide accurate information</p>
+</div>
+  </div>
+  </div>
+
+  <!-- User Info -->
+
+  <p class="info-item"><b class="para">Email    </b>:{{ email }}</p>
+  
+  {% if error_message %}
+    <p style="color: red;">{{ error_message }}</p>
+  {% endif %}
+  <!-- Complaint Form -->
+  <form action="/cridentials" method="POST">
+    <label for="newusername"><b>username:</b></label>
+    <input type="text" id="newusername" name="newusername"><br><br>
+  
+    <label for="newbranch">User branch   :</label>
+    <select id="newbranch" name="newbranch">
+      <option value=""></option>
+      <option value="CSE">CSE</option>
+      <option value="CSD">CSD</option>
+      <option value="CSE(AI&ML)">CSE(AI&ML)</option>
+      <option value="EEE">EEE</option>
+      <option value="ECE">ECE</option>
+      <option value="CIVIL">CIVIL</option>
+      <option value="MECH">MECH</option>
+    </select><br><br>
+  
+    <label for="newpassword"><b>Password:</b></label>
+    <input type="text" id="newpassword" name="newpassword"><br><br>
+  
+    <label for="id"><b>id:</b></label>
+    <input type="text" id="id" name="id"><br><br>
+
+    <label for="usercell">User cell   :</label>
+    
+    <select id="usercell" name="usercell">
+      <option value=""></option>
+      <option value="Facalty Cell">Facalty Cell</option>
+      <option value="Examinataion Cell">Examintaion Cell</option>
+      <option value="Maintaince cell">Maintaince cell</option>
+    </select><br><br>
+  
+    <button type="submit" class="send-button">Submit Student Complaint</button>
+  </form>
+
+  <footer>
+    <p>&copy; 2023 Student Complaint System. All rights reserved.</p>
+  </footer>
+</div>
+</body>
+</html>
