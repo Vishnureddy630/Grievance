@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File option</title>
+<style>
+/* Style for small interface */
+.continer {
+  max-width: 400px;
+  margin: auto; /* Center the container horizontally */
+  padding: 22px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Additional styles */
+.continer h3 {
+  text-align: center; /* Center the heading */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set height to full viewport height */
+  margin: 0;
+}
+
+form {
+  text-align: center;
+}
+
+input[type="submit"] {
+  width: 100%; /* Make buttons fill the container */
+  height: 40px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+input[name="Facalty Cell"] {
+  background-color: #008CBA; /* Blue for Download button */
+}
+
+input[name="Maintaince cell"] {
+  background-color: #94e8899e; /* Red for Delete button */
+}
+input[name="Examintaion Cell"] {
+  background-color: #eaab989e; /* Red for Delete button */
+}
+</style>
+</head>
+<body>
+
+<div class="continer">
+    
+  <h3>Complaint on</h3>
+  <form action="/option" method="post">
+    <input type="submit" name="Examintaion Cell" value="Examination Cell">
+    <br> <!-- Adding a line break for visual separation -->
+    <input type="submit" name="Facalty Cell" value="Faculty Cell">
+    <br> <!-- Adding a line break for visual separation -->
+    <input type="submit" name="Maintaince cell" value="Maintenance Cell">
+  </form>
+</div>
+
+<!-- Display the clicked button's value -->
+<!-- {% if button_clicked %}
+  <div>
+    You clicked: {{ button_clicked }}
+  </div>
+{% endif %} -->
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Status</title>
+<style>
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+}
+
+/* Container Styles */
+.container {
+    width: 80%;
+    max-width: 350px;
+    margin: 300px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Heading Styles */
+.container h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+/* Form Styles */
+form {
+    text-align: center;
+}
+
+/* Response Paragraph Styles */
+.response {
+    text-align: center;
+}
+
+/* Button Styles */
+.send-button {
+    padding: 10px 20px;
+    background-color: #e61a32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Media Queries */
+@media screen and (max-width: 500px) {
+    .container {
+        width: 90%;
+    }
+
+    .send-button {
+        padding: 8px 16px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h3>Status</h3>
+    <form action="/close" method="POST">
+        <p class="response">{{ response }}</p>
+        <button type="submit" class="send-button">Close</button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complent box</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; /* Remove default margin */
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+      background-color: #f2f2f2; /* Add a light background color */
+    }
+
+    .container {
+      max-width: 300px;
+      margin: 80px auto;
+      background-color: #fff; /* Set container background color */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add black shadow */
+      padding: 13px; /* Add padding */
+      border-radius: 20px; /* Add border radius */
+    }
+
+    .header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px; /* Add padding */
+      border-top-left-radius: 10px; /* Adjust border radius */
+      border-top-right-radius: 10px; /* Adjust border radius */
+    }
+
+    .header p {
+      margin: 5px;
+    }
+
+    .centered-text {
+      text-align: center;
+      margin-top: 30px; /* Reduce margin for better alignment */
+      margin-bottom: 30px; /* Reduce margin for better alignment */
+    }
+
+    .message-input {
+      width: calc(100% - 20px); /* Adjust width to fill the container */
+      padding: 8px;
+      margin: 5px 0 20px; /* Adjust margin */
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      display: block;
+      box-sizing: border-box; /* Include padding and border in width calculation */
+    }
+
+     .send-button {
+    padding: 8px 20px;
+    background-color: #7c4deb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px; /* Add padding */
+      border-bottom-left-radius: 10px; /* Adjust border radius */
+      border-bottom-right-radius: 10px; /* Adjust border radius */
+    }
+
+    footer p {
+      margin: 5px;
+    }
+    
+    @media only screen and (max-width: 600px) {
+      .container {
+        padding: 10px; /* Adjust padding for smaller screens */
+      }
+
+      .message-input {
+        width: calc(100% - 20px); /* Adjust width for mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- <div class="header"><p>Welcome to Complent Box</p></div> -->
+  
+  <div class="centered-text">
+    <img src="https://www.facultyplus.com/wp-content/uploads/2018/10/Vaagdevi-Logo.png" alt="vaagdevi logo" width="150" height="150">
+    <h3>Login</h3>
+    <!-- Adjust form layout as needed -->
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+
+    <form action="/login" method="POST">
+      <label for="user">User type   :</label>
+      <select id="user" name="user">
+        <option value="student">Student</option>
+        <option value="admin">Admin</option>
+      </select><br><br>
+
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username"><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br><br>
+      <button class="send-button">Login</button>
+    </form>
+  </div>
+
+<!-- <footer>
+  <p>© 2024 Complent Box. All rights reserved.</p>
+</footer> -->
+</div>
+</body>
+</html>
